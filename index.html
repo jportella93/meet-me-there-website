@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="icon_prs_icon.ico">
+
+
+    <title>Meet-th</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark" style="background-color: #00826f;">
+      <a class="navbar-brand" href="#" style="margin-left: 20px">
+      <img src="icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Meet-th</a>
+    </nav>
+    <div id="targetDestination" style="background-color: #a93610; padding: 10px; text-align: center; color:white; display: none">Looking for Flights to ZRH</div>
+    <div class="row row-divided">
+      <div class="col-5">
+        <div class="container">
+          <div>
+            <div class="card-body">
+              <h4 class="text-center">Step 1: Add Friends</h4>
+              <form id="userForm">
+                <table id="myTable" class="table order-list">
+                  <tbody>
+                      <tr class="row">
+                          <td class="col-md-5">Name</td>
+                          <td class="col-md-5">Airport</td>
+                          <td class="col-md-2"></td>
+                      </tr>
+                      <tr class="row">
+                          <td class="col-md-5">
+                              <input type="text" name="name" class="form-control" placeholder="Full Name" value="A" />
+                          </td>
+                          <td class="col-md-5">
+                              <input type="text" name="airport" class="autocomplete form-control" placeholder="AIRPORT CODE" style="text-transform: uppercase" />
+                          </td>
+                          <td class="col-md-2">
+                              <input type="hidden" />
+                          </td>
+                      </tr>
+                  </tbody>
+                  <tfoot>
+                      <tr>
+                          <td colspan="5" class="text-right text-center">
+                              <button type="button" class="btn btn-info" id="addrow">Add friend</button>
+                          </td>
+                      </tr>
+                      <tr>
+                      </tr>
+                  </tfoot>
+                </table>
+
+                <h4 class="text-center" style="margin-top: 50px">Step 2: Select Dates</h4>
+                <table class="table">
+                  <tr class="row">
+                    <td class="col-sm">From Date</td>
+                    <td class="col-sm">To Date</td>
+                  </tr>
+                  <tr class="row">
+                    <td class="col-sm">
+                      <input class="form-control" type="date" name="fromDate" value="2019-04-01" id="fromDate">
+                    </td>
+                    <td class="col-sm">
+                      <input class="form-control" type="date" name="toDate" value="2019-04-15" id="toDate">
+                    </td>
+                  </tr>
+                </table>
+                <div class="text-right text-center">
+                  <button type="button" class="btn btn-info" id="getFlights">Get Flights</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="vertical-divider"></div>
+    <div class="col-7">
+      <img src="./img/boarding.png" id="image1" style="width:100%;height:500px;margin-top:30px">
+      <div class="wrapper" id="spinner">
+        <div class="loader">
+          <div class="wave top-wave">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="wave bottom-wave">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="resultsTable">
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.1/lodash.min.js"></script>
+    <script src="https://unpkg.com/fuse.js@2.5.0/src/fuse.min.js"></script>
+    <script src="https://screenfeedcontent.blob.core.windows.net/html/airports.js"></script>
+
+    <script src="moment.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="script.js"></script>
+  </body>
+</html>
