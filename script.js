@@ -187,7 +187,22 @@ function drawResults(searchResults){
 
 /** AddRow code **/
 
+
+    Date.prototype.toDateInputValue = (function() {
+        var local = new Date(this);
+        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+        return local.toJSON().slice(0,10);
+    });
+
+    var today = new Date();
+    var nextDay = new Date();
+    nextDay.setDate(today.getDate()+2);
+
 $(document).ready(function () {
+
+    $('#fromDate').val( new Date().toDateInputValue() );
+    $('#toDate').val( nextDay.toJSON().slice(0,10) );
+
     var counter = 0;
 
     /*target Destination*/
